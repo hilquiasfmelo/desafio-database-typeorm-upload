@@ -63,6 +63,7 @@ class ImportTransactionsService {
     // Add as categorias que não existem no BD
     const addCategoryTitles = categories
       .filter(category => !existentCategoriesTitle.includes(category))
+      // Filtra para retorna somente uma categoria mesmo que esteja duplicada
       .filter((value, index, self) => self.indexOf(value) === index);
 
     // Salvando as categorias no BD
